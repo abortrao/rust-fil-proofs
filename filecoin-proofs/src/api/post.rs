@@ -309,6 +309,7 @@ pub fn generate_winning_post_with_vanilla<Tree: 'static + MerkleTreeTrait>(
         &pub_inputs,
         partitioned_proofs,
         &groth_params,
+        1,
     )?;
     let proof = proof.to_vec()?;
 
@@ -402,6 +403,7 @@ pub fn generate_winning_post<Tree: 'static + MerkleTreeTrait>(
         &pub_inputs,
         &priv_inputs,
         &groth_params,
+        1, // winning post use video card 1
     )?;
     let proof = proof.to_vec()?;
 
@@ -840,6 +842,7 @@ pub fn generate_window_post_with_vanilla<Tree: 'static + MerkleTreeTrait>(
         &pub_inputs,
         partitioned_proofs,
         &groth_params,
+        0,
     )?;
 
     info!("generate_window_post_with_vanilla:finish");
@@ -925,6 +928,7 @@ pub fn generate_window_post<Tree: 'static + MerkleTreeTrait>(
         &pub_inputs,
         &priv_inputs,
         &groth_params,
+        0, // window post use video card 0
     )?;
 
     info!("generate_window_post:finish");
